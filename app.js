@@ -2,14 +2,15 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // var admin  = require('./routes/admin/index')
-// var users = require('./routes/users/index');
+var users = require('./routes/users/index');
 var index = require('./routes/index');
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/',index);
+app.use('/', index);
+app.use('/users',users);
 // app.use('/users', users);
 // app.use('/admin', admin);
 
